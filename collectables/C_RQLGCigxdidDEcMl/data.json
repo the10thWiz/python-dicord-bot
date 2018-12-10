@@ -1,0 +1,13 @@
+{
+    "version": 0,
+    "uuid": "C_RQLGCigxdidDEcMl",
+    "name": "Roboram",
+    "postfix": "0000",
+    "groupID":["G_3QoO2AKjt7DLSmFg"],
+    "score": 100,
+    "popularity":100,
+    "description": "A Robotic Ram",
+    "wiki":"",
+    "image": "roboram.png",
+    "images":[]
+}

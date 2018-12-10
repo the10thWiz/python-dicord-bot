@@ -6,7 +6,6 @@ import asyncio
 import websockets
 import logging
 import sys
-from runsafe import runSafe as execCode
 
 # Configure Logging Utility
 logging.basicConfig(filename='pyBot.log', filemode='w', level=logging.DEBUG,
@@ -111,14 +110,6 @@ async def handleEvent(type, data):
         guilds.pop(data['id'], None)
     elif type == 'MESSAGE_CREATE':
         logger.info('Message Recieved: %s', data['content'])
-        try:
-            if data['content'].startswith('```'):
-                con = data['content'].strip('`\n')
-                i = con.index('\n')
-                logger.info(f'Running code "{con[i+1:]}"')
-                execCode(con[:i], con[i+1:], lambda c:httpapi['message'](data['channel_id'], f'{con[:i]}\n```\n{c}\n```'))
-        except:
-            logger.info('Error when running')
     else:
         logger.info('Unknown type: %s', type)
     asyncio.create_task(writeState())

@@ -1,0 +1,14 @@
+{
+    "logViewer.watch": [
+        {
+            "title": "Pybot log",
+            "pattern": "pyBot.log"
+        }
+    ],
+    "python.autoComplete.extraPaths": [
+        "${env:SPARK_HOME}/python",
+        "${env:SPARK_HOME}/python/pyspark"
+    ],
+    "python.pythonPath": "python3.7",
+    "python.linting.pylintEnabled": true
+}
